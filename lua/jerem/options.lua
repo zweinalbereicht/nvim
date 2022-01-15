@@ -2,30 +2,38 @@
 -- enter :h options for a list of options
 
 local options = {
-	splitbelow = true,
-	splitright = true,
-	number = true,
-	relativenumber = true,
-	numberwidth = 2,
-	autoindent = true,
-	background = "dark",
-	belloff = "all",
-	clipboard = "unnamedplus",
-	--colorcolumn = {"80"},
-	cursorline = true,
-	cursorlineopt = "number",
-	hlsearch = true,
-	ignorecase = false,
-	incsearch = true,
-	--mouse = false,
-	tabstop = 4,
-	termguicolors = true,
-	softtabstop = 4,
-	showtabline = 1,
-	wrap = false,
+    cmdheight = 3,
+    --nocompatible = true,
+    splitbelow = true,
+    splitright = true,
+    number = true,
+    relativenumber = true,
+    numberwidth = 2,
+    autoindent = true,
+    background = "dark",
+    belloff = "all",
+    clipboard = "unnamedplus",
+    --colorcolumn = {"80"},
+    cursorline = false,
+    cursorlineopt = "number",
+    hlsearch = true,
+    ignorecase = false,
+    incsearch = true,
+    --mouse = false,
+    expandtab = true,
+    termguicolors = true,
+    softtabstop = 4,
+    tabstop = 4,
+    shiftwidth = 4,
+    showtabline = 0,
+    wrap = false,
+    signcolumn = "yes" -- displays the gutter on the right
 }
 
 for key, value in pairs(options) do
-	vim.opt[key]=value
+    vim.opt[key]=value
 end
 
+
+-- additional stuff
+vim.cmd [[set nocompatible]]
