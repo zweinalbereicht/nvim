@@ -5,3 +5,4 @@ end
 
 require "jerem.lsp.lsp-installer"
 require("jerem.lsp.handlers").setup()
+require 'jerem.lsp.null-ls'

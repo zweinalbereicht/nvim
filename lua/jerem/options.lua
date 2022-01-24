@@ -20,6 +20,7 @@ local options = {
     ignorecase = false,
     incsearch = true,
     --mouse = false,
+    scrolloff = 8,
     expandtab = true,
     termguicolors = true,
     softtabstop = 4,

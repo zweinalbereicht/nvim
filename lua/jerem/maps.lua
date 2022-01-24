@@ -22,9 +22,13 @@ keymap('n','<S-Right>',': vertical resize +2<CR>',opts)
 -- buffer navigation keymaps
 keymap('n','<S-l>',':bnext <CR>',opts)
 keymap('n','<S-h>',':bprev <CR>',opts)
+keymap('n','<leader>c',':w<CR>:bdelete<CR>',opts)
+
 
 -- QOL keympas
 keymap('i','kj','<ESC>',opts) -- going fom insert to normal quicler
 keymap('i','jk','<ESC>',opts)
 keymap('v','$','$h',opts) -- to select until end of line without the cariage
-keymap('n','<leader>m',':Lex<CR>:vertical resize 25<CR>',opts) -- open menu
+keymap('n','<leader>m',':NvimTreeToggle<CR>',opts) -- open menu
+keymap('n','<leader>f',':Format<CR>',opts) -- open menu
+
