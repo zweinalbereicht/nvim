@@ -93,5 +93,8 @@ return require('packer').startup(function()
         },
     }
 
+    -- ex Goyo plugin
+    use "Pocco81/TrueZen.nvim"
+
 
 end)

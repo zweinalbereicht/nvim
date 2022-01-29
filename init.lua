@@ -26,3 +26,5 @@ require 'jerem.bufferline'
 require 'jerem.toggleterm'
 -- file management
 require 'jerem.nvimtree'
+-- TrueZen
+require 'jerem.truezen'
