@@ -1,30 +1,16 @@
--- general options
-require 'jerem.options'
--- general remaps
-require 'jerem.maps'
--- plugins with packer
-require 'jerem.plugins'
--- colorscheme call
-require 'jerem.colorschemes'
--- completion engine
-require 'jerem.cmp'
--- lsp setup
-require 'jerem.lsp' -- when requiring folder, will alwayd require the init.lua inside
--- telescope setup
-require 'jerem.telescope'
--- treesitter
-require 'jerem.treesitter'
--- autopairs
-require 'jerem.autopairs'
--- status line
-require 'jerem.lualine'
--- org mode
-require 'jerem.orgmode'
--- bufferline
-require 'jerem.bufferline'
--- toggle term
-require 'jerem.toggleterm'
--- file management
-require 'jerem.nvimtree'
--- TrueZen
-require 'jerem.truezen'
+---- general options
+require 'config.options'
+---- general remaps
+require 'config.maps'
+---- colorscheme call
+require 'config.colorschemes'
+---- plugins with packer
+require 'config.plugins'
+---- completion engine
+--require 'config.cmp'
+---- lsp setup
+--require 'config.lsp' -- when requiring folder, will alwayd require the init.lua inside
+---- bufferline
+--require 'config.bufferline'
+---- toggle term
+--require 'config.toggleterm'

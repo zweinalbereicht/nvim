@@ -18,6 +18,12 @@ keymap("n", "<leader>fh", ":lua telescope_b.help_tags()<CR>", opts)
 -- telescope setup
 telescope.setup({
 	defaults = {
-		file_ignore_patterns = { "node%_modules", "./node%_modules/*" ,"node_modules"}, -- other configuration values here
+		file_ignore_patterns = { "node%_modules",
+            "./node%_modules/*" ,
+            "node_modules",
+            "./target/*",
+            "target"}, -- other configuration values here
 	},
 })
+
+

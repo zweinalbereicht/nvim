@@ -39,51 +39,63 @@ return require('packer').startup(function()
     -- plugin list
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        config = require('config.telescope'),
+}
 
     -- colorschemes
     use 'junegunn/seoul256.vim'
     use 'folke/tokyonight.nvim'
+    use "ellisonleao/gruvbox.nvim"
     use 'lunarvim/colorschemes'
+    use {
+        "rebelot/kanagawa.nvim",
+        config = require('config.colorschemes'),
+    }
 
-    -- autocompletion with cmp
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'L3MON4D3/LuaSnip'
-    use 'rafamadriz/friendly-snippets'
-    use 'akinsho/toggleterm.nvim'
+    --startup screen
+    use 
+    {
+        "goolord/alpha-nvim",
+        config = require("config.alpha"),
+    }
+
+    -- auto completion plugins
 
     -- autopairs
     use 'windwp/nvim-autopairs'
 
-    -- lsp setup
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
-    use 'jose-elias-alvarez/null-ls.nvim'
-
+    -- lsp setup and cmp setup
+    use {
+        "williamboman/nvim-lsp-installer",
+        'neovim/nvim-lspconfig',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp',
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+        config = require("config.lsp"),
+    }
 
     -- treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use 'p00f/nvim-ts-rainbow' -- rainbow parenthesis
+    --use {,
+    --    'nvim-treesitter/nvim-treesitter',
+    --    run = ':TSUpdate'
+    --}
 
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = require('config.lualine')
     }
 
-    -- orgmode
-    use {'nvim-orgmode/orgmode'}
 
     -- bufferline
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- menu manager
     use {
@@ -91,10 +103,16 @@ return require('packer').startup(function()
         requires = {
             'kyazdani42/nvim-web-devicons', -- optional, for file icon
         },
+        config = require('config.nvimtree')
     }
 
     -- ex Goyo plugin
-    use "Pocco81/TrueZen.nvim"
+    use{
+        "Pocco81/TrueZen.nvim",
+        config = require('config.truezen')
+}
+
+    
 
 
 end)
