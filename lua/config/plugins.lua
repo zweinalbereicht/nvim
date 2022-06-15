@@ -64,11 +64,19 @@ return require('packer').startup(function()
     -- auto completion plugins
 
     -- autopairs
-    use 'windwp/nvim-autopairs'
+    use {
+        'windwp/nvim-autopairs',
+        config = require("nvim-autopairs").setup {}
+    }
 
-    -- lsp setup and cmp setup
+    -- lsp installer
     use {
         "williamboman/nvim-lsp-installer",
+        config = require('nvim-lsp-installer').setup {}
+    }
+    
+    -- lsp setup and cmp setup
+    use {
         'neovim/nvim-lspconfig',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
@@ -91,6 +99,12 @@ return require('packer').startup(function()
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = require('config.lualine')
+    }
+
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = 'v1.*',
+        config = require("config.toggleterm")
     }
 
 
