@@ -42,7 +42,7 @@ return require('packer').startup(function()
     use {
         'nvim-telescope/telescope.nvim',
         config = require('config.telescope'),
-}
+    }
 
     -- colorschemes
     use 'junegunn/seoul256.vim'
@@ -55,7 +55,7 @@ return require('packer').startup(function()
     }
 
     --startup screen
-    use 
+    use
     {
         "goolord/alpha-nvim",
         config = require("config.alpha"),
@@ -74,7 +74,7 @@ return require('packer').startup(function()
         "williamboman/nvim-lsp-installer",
         config = require('nvim-lsp-installer').setup {}
     }
-    
+
     -- lsp setup and cmp setup
     use {
         'neovim/nvim-lspconfig',
@@ -89,10 +89,11 @@ return require('packer').startup(function()
     }
 
     -- treesitter
-    --use {,
-    --    'nvim-treesitter/nvim-treesitter',
-    --    run = ':TSUpdate'
-    --}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = require('config.treesitter')
+    }
 
     -- lualine
     use {
@@ -121,12 +122,12 @@ return require('packer').startup(function()
     }
 
     -- ex Goyo plugin
-    use{
+    use {
         "Pocco81/TrueZen.nvim",
         config = require('config.truezen')
-}
+    }
 
-    
+
 
 
 end)
