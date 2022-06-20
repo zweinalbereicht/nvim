@@ -1,8 +1,8 @@
 local status_ok, telescope = pcall(require, "telescope")
 status_ok_2, telescope_b = pcall(require, "telescope.builtin") -- need this to be global to be understood out of this file
 if not (status_ok and status_ok_2) then
-	print("telescope plugin not loaded")
-	return
+    print("telescope plugin not loaded")
+    return
 end
 
 -- telescope remaps
@@ -17,13 +17,12 @@ keymap("n", "<leader>fh", ":lua telescope_b.help_tags()<CR>", opts)
 
 -- telescope setup
 telescope.setup({
-	defaults = {
-		file_ignore_patterns = { "node%_modules",
-            "./node%_modules/*" ,
+    defaults = {
+        file_ignore_patterns = { "node%_modules",
+            "./node%_modules/*",
             "node_modules",
             "./target/*",
-            "target"}, -- other configuration values here
-	},
+            "target" }, -- other configuration values here
+        preview = false,
+    },
 })
-
-

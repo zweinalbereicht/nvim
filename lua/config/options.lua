@@ -35,6 +35,5 @@ for key, value in pairs(options) do
     vim.opt[key]=value
 end
 
-
 -- additional stuff
 vim.cmd [[set nocompatible]]

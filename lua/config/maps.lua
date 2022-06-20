@@ -30,5 +30,3 @@ keymap('i', 'kj', '<ESC>', opts) -- going fom insert to normal quicler
 keymap('i', 'jk', '<ESC>', opts)
 keymap('v', '$', '$h', opts) -- to select until end of line without the cariage
 keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts) -- open menu
-keymap('n', '<leader>f', ':Format<CR>', opts) -- format (not working fot now)
-
