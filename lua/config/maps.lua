@@ -31,5 +31,4 @@ keymap('i', 'jk', '<ESC>', opts)
 keymap('v', '$', '$h', opts) -- to select until end of line without the cariage
 keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts) -- open menu
 keymap('n', '<leader>f', ':Format<CR>', opts) -- format (not working fot now)
-keymap('n', ':hf<CR>', ':!ls', opts) -- format (not working fot now)
 
