@@ -1,0 +1,5 @@
+local colorscheme = "seoul256"
+
+local chng_to_edit()
+
+local ex_ok, _ = pcall(vim.cmd, "command " .. colorscheme) -- double dot stands for string concat

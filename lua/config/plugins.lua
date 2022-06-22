@@ -127,6 +127,12 @@ return require('packer').startup(function()
         config = require('config.truezen')
     }
 
+    --Goyo trial
+    use {
+        'junegunn/goyo.vim',
+        config = require('config.goyo'),
+    }
+
 
 
 
