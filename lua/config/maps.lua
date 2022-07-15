@@ -1,4 +1,5 @@
 local keymap = vim.api.nvim_set_keymap
+local autocmd = vim.api.nvim_create_autocmd
 local opts = { noremap = true }
 
 -- set leader key
@@ -30,3 +31,42 @@ keymap('i', 'kj', '<ESC>', opts) -- going fom insert to normal quicler
 keymap('i', 'jk', '<ESC>', opts)
 keymap('v', '$', '$h', opts) -- to select until end of line without the cariage
 keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts) -- open menu
+
+
+-- Autocommands for a run shortcut.
+-- We will add languages incrementally as we find it useful in the workflow.
+
+-- lua run
+local luaexec = function()
+    keymap('n', '<leader><leader>r', ':source %<CR>', {})
+end
+-- python run
+local pythonexec = function()
+    keymap('n', '<leader><leader>r', ':!python %<CR>', {})
+end
+
+-- rust run
+local rustexec = function()
+    local p, counter = io.popen("ls . | grep .toml"), 0 -- starts a new process to run bash cmd
+    for _ in p:lines() do counter = counter + 1 end
+    p:close()
+
+    -- If at base of project, assign the run cmd
+    if counter > 0 then
+        keymap('n', '<leader><leader>r', ':!cargo run<CR>', {})
+    end
+end
+
+-- loop through to assign all run functions
+local fileexec = {
+    lua = luaexec,
+    py = pythonexec,
+    rs = rustexec
+}
+
+for key, value in pairs(fileexec) do
+    autocmd({ "BufEnter", "BufWinEnter" }, {
+        pattern = { "*." .. key },
+        callback = value, -- Or myvimfun
+    })
+end

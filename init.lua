@@ -6,11 +6,15 @@ require 'config.maps'
 require 'config.colorschemes'
 ---- plugins with packer
 require 'config.plugins'
----- completion engine
---require 'config.cmp'
----- lsp setup
---require 'config.lsp' -- when requiring folder, will alwayd require the init.lua inside
----- bufferline
---require 'config.bufferline'
----- toggle term
---require 'config.toggleterm'
+-- helper functions
+require 'config.helper'
+-- completion engine
+-- require 'config.cmp'
+-- lsp setup
+-- require 'config.lsp' -- when requiring folder, will alwayd require the init.lua inside
+-- bufferline
+-- require 'config.bufferline'
+-- toggle term
+-- require 'config.toggleterm'
+--
+-- cdknssdnc

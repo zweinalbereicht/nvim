@@ -133,7 +133,17 @@ return require('packer').startup(function()
         config = require('config.goyo'),
     }
 
+    -- commenting plugin
+    use {
+        'numToStr/Comment.nvim',
+        run = require("Comment").setup()
+    }
 
+    --My plugins
+    use {
+        '/Users/jeremie/Sandbox/neovim_plugins/cell-vim',
+        run = require('cellvim'),
+    }
 
 
 end)
