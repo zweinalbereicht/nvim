@@ -145,8 +145,17 @@ return require('packer').startup(function()
     }
 
     --My plugins
+
+    -- specification of file location on mac or linux.
+    local plugin_location = ''
+    if vim.loop.os_uname().sysname=='Darwin' then
+        plugin_location = '/Users/jeremie/Sandbox/neovim_plugins/'
+    else
+        plugin_location= '/home/jeremie/neovim_plugins/'
+    end
+
     use {
-        '/Users/jeremie/Sandbox/neovim_plugins/cell-vim',
+        plugin_location .. 'cell-vim',
         run = require('cellvim'),
     }
 
