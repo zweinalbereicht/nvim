@@ -139,6 +139,11 @@ return require('packer').startup(function()
         run = require("Comment").setup()
     }
 
+    --Codi plugin
+    use {
+        'metakirby5/codi.vim',
+    }
+
     --My plugins
     use {
         '/Users/jeremie/Sandbox/neovim_plugins/cell-vim',
