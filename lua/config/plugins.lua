@@ -15,6 +15,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
+-- HOW TO ADD NEW PLUGINS
+-- Add an entry in the setup, comment the config par, save, source the file, run Packersync, uncomment the config and source.
+
+
+
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
 augroup packer_user_config
@@ -22,6 +27,7 @@ autocmd!
 autocmd BufWritePost plugins.lua source <afile> | PackerSync
 augroup end
 ]]
+
 
 -- loading packer
 local load_ok, packer = pcall(require, "packer")
@@ -48,31 +54,46 @@ return require('packer').startup(function()
     use 'junegunn/seoul256.vim'
     use 'folke/tokyonight.nvim'
     use "ellisonleao/gruvbox.nvim"
-    use 'lunarvim/colorschemes'
     use {
         "rebelot/kanagawa.nvim",
         config = require('config.colorschemes'),
     }
 
     --startup screen
-    use
-    {
+    use {
         "goolord/alpha-nvim",
         config = require("config.alpha"),
     }
-
-    -- auto completion plugins
-
+    
     -- autopairs
     use {
         'windwp/nvim-autopairs',
         config = require("nvim-autopairs").setup {}
     }
 
+    -- lualine 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = require('config.lualine')
+    }
+
+    -- commenting plugin
+    use {
+        'numToStr/Comment.nvim',
+        run = require("Comment").setup()
+    }
+
+    --autotags
+    use {
+        'windwp/nvim-ts-autotag',
+        config = require("nvim-ts-autotag").setup {}
+    }
+
     -- lsp installer
     use {
         "williamboman/nvim-lsp-installer",
-        config = require('nvim-lsp-installer').setup {}
+        --config = require('nvim-lsp-installer').setup {}
     }
 
     -- lsp setup and cmp setup
@@ -85,9 +106,10 @@ return require('packer').startup(function()
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
+        "rafamadriz/friendly-snippets",
         config = require("config.lsp"),
     }
-
+    
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -95,22 +117,8 @@ return require('packer').startup(function()
         config = require('config.treesitter')
     }
 
-    -- lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = require('config.lualine')
-    }
-
-    use {
-        "akinsho/toggleterm.nvim",
-        tag = 'v1.*',
-        config = require("config.toggleterm")
-    }
-
-
     -- bufferline
-    --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- menu manager
     use {
@@ -121,29 +129,11 @@ return require('packer').startup(function()
         config = require('config.nvimtree')
     }
 
-    -- ex Goyo plugin
-    use {
-        "Pocco81/TrueZen.nvim",
-        config = require('config.truezen')
-    }
-
     --Goyo trial
     use {
         'junegunn/goyo.vim',
         config = require('config.goyo'),
     }
-
-    -- commenting plugin
-    use {
-        'numToStr/Comment.nvim',
-        run = require("Comment").setup()
-    }
-
-    --Codi plugin
-    use {
-        'metakirby5/codi.vim',
-    }
-
     --My plugins
 
     -- specification of file location on mac or linux.
@@ -158,6 +148,33 @@ return require('packer').startup(function()
         plugin_location .. 'cell-vim',
         run = require('cellvim'),
     }
+--[[
 
+
+
+
+    
+
+
+  --[[
+    
+
+
+
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = 'v1.*',
+        config = require("config.toggleterm")
+    }
+
+    -- ex Goyo plugin
+    use {
+        "Pocco81/TrueZen.nvim",
+        config = require('config.truezen')
+    }
+
+    
+
+--]]
 
 end)

@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 treesitter.setup {
-    ensure_installed = { "lua", "c", "rust", "python" }, -- One of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = { "lua", "c", "rust", "python","html" }, -- One of "all", "maintained" (parsers with maintainers), or a list of languages
     sync_install = false, -- Install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
@@ -27,5 +27,8 @@ treesitter.setup {
         max_file_lines = nil, -- Do not enable for files with more than n lines, int
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
+    },
+    autotag = {
+        enable=true,
     },
 }

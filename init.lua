@@ -4,7 +4,7 @@ require 'config.options'
 require 'config.maps'
 ---- colorscheme call
 require 'config.colorschemes'
----- plugins with packer
+-- plugins with packer
 require 'config.plugins'
 -- helper functions
 require 'config.helper'

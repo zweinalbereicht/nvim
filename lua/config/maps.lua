@@ -31,6 +31,9 @@ keymap('i', 'kj', '<ESC>', opts) -- going fom insert to normal quicler
 keymap('i', 'jk', '<ESC>', opts)
 keymap('v', '$', '$h', opts) -- to select until end of line without the cariage
 keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts) -- open menu
+vim.api.nvim_create_autocmd({ "FileType" }, { pattern = { 'help' }, callback = function()
+    keymap('n', '<leader>g', ':echo "lala"<CR>', opts) -- open menu
+end }) -- remap goto in help
 
 
 -- Autocommands for a run shortcut.
