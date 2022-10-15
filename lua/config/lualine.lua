@@ -4,6 +4,7 @@ if not status_ok then
 		return
 end
 
+
 line.setup {
 		options = {
 				icons_enabled = true,
@@ -32,3 +33,4 @@ line.setup {
 		tabline = {},
 		extensions = {}
 }
+

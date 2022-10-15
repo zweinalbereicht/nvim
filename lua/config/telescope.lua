@@ -14,8 +14,8 @@ keymap("n", "<leader>ff", ":lua telescope_b.find_files()<CR>", opts)
 keymap("n", "<leader>fg", ":lua telescope_b.live_grep()<CR>", opts)
 keymap("n", "<leader>fb", ":lua telescope_b.buffers()<CR>", opts)
 keymap("n", "<leader>fh", ":lua telescope_b.help_tags()<CR>", opts)
-
--- telescope setup
+keymap("n", "<leader>fo", ":lua telescope_b.oldfiles()<CR>", opts)
+-- telescope setu
 telescope.setup({
     defaults = {
         file_ignore_patterns = { "node%_modules",

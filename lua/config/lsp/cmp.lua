@@ -1,6 +1,9 @@
 local cmp = require 'cmp'
 local luasnip = require("luasnip")
 
+-- load existing snippets from rastafariz
+require("luasnip.loaders.from_vscode").lazy_load()
+
 -- user tootls to tab in and out of propositions
 local has_words_before = function()
     ---@diagnostic disable-next-line: deprecated
@@ -63,6 +66,7 @@ cmp.setup({
             vim_item.menu = ({
                 buffer = "[Buffer]",
                 luasnip = "[LuaSnip]",
+                nvim_lsp = "[LSP]"
             })[entry.source.name]
             return vim_item
         end

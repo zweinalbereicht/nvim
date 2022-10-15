@@ -8,6 +8,13 @@ vim.g.tokyonight_style = "dark"
 vim.g.tokyonight_italic_comments = true
 vim.g.tokyonight_transparent = false
 
+
+local load_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme) -- double dot stands for string concat
+if not load_ok then
+    vim.notify("colorscheme " .. colorscheme .. " not found!")
+    return
+end
+
 -- specific setup
 if colorscheme == "kanagawa" then
     -- Default options:
@@ -27,10 +34,4 @@ if colorscheme == "kanagawa" then
         colors = {},
         overrides = {},
     })
-end
-
-local load_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme) -- double dot stands for string concat
-if not load_ok then
-    vim.notify("colorscheme " .. colorscheme .. " not found!")
-    return
 end
