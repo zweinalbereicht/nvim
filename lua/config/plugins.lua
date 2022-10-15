@@ -64,14 +64,14 @@ return require('packer').startup(function()
         "goolord/alpha-nvim",
         config = require("config.alpha"),
     }
-    
+
     -- autopairs
     use {
         'windwp/nvim-autopairs',
         config = require("nvim-autopairs").setup {}
     }
 
-    -- lualine 
+    -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -109,7 +109,7 @@ return require('packer').startup(function()
         "rafamadriz/friendly-snippets",
         config = require("config.lsp"),
     }
-    
+
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -118,7 +118,7 @@ return require('packer').startup(function()
     }
 
     -- bufferline
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
     -- menu manager
     use {
@@ -138,17 +138,17 @@ return require('packer').startup(function()
 
     -- specification of file location on mac or linux.
     local plugin_location = ''
-    if vim.loop.os_uname().sysname=='Darwin' then
+    if vim.loop.os_uname().sysname == 'Darwin' then
         plugin_location = '/Users/jeremie/Sandbox/neovim_plugins/'
     else
-        plugin_location= '/home/jeremie/neovim_plugins/'
+        plugin_location = '/home/jeremie/neovim_plugins/'
     end
 
     use {
         plugin_location .. 'cell-vim',
         run = require('cellvim'),
     }
---[[
+    --[[
 
 
 

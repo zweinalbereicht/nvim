@@ -1,3 +1,7 @@
+-- local M = {}
+--
+-- local M.activate() =
+
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
     return
@@ -36,4 +40,3 @@ dashboard.section.buttons.opts.hl = "Keyword"
 dashboard.opts.opts.noautocmd = true
 
 alpha.setup(dashboard.opts)
-require('alpha').start()
