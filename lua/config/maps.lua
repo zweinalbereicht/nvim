@@ -27,12 +27,17 @@ keymap('n', '<leader>c', ':w<CR>:bdelete<CR>', opts)
 keymap('i', 'kj', '<ESC>', opts) -- going fom insert to normal quicler
 keymap('i', 'jk', '<ESC>', opts)
 keymap('v', '$', '$h', opts) -- to select until end of line without the cariage
+keymap('v', '<', '<gv', opts) -- re select after indentation
+keymap('v', '>', '>gv', opts) -- re select after indentation
 keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts) -- open menu
 keymap('n', '<leader>vn', ':vsplit<CR>:Telescope find_files<CR>', opts) -- quick vsplt and find new file
 
 vim.api.nvim_create_autocmd({ "FileType" }, { pattern = { 'help' }, callback = function()
   keymap('n', '<leader>g', ':echo "lala"<CR>', opts) -- open menu
 end }) -- remap goto in help
+
+-- changing between stars
+keymap('n', 'ci*', 'F*lvf*hc', opts) -- quick vsplt and find new file
 
 
 -- Autocommands for a run shortcut.

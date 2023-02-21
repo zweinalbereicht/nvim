@@ -140,6 +140,19 @@ return require('packer').startup(function()
     'alexghergh/nvim-tmux-navigation',
     config = require('config.nvim-tmux'),
   }
+
+  -- fast motion using leap
+  use {
+    'ggandor/leap.nvim',
+    config = require('leap').add_default_mappings(),
+  }
+
+  -- markdown preview
+  use {
+    'frabjous/knap',
+    config = require('config.knap'),
+  }
+
   --My plugins
 
   -- specification of file location on mac or linux.
@@ -152,7 +165,7 @@ return require('packer').startup(function()
 
   use {
     plugin_location .. 'cell-vim',
-    run = require('cellvim'),
+    -- run = require('cellvim'),
   }
   --[[
 
