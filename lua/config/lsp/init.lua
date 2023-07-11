@@ -4,7 +4,14 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'sumneko_lua', 'clangd', 'bashls', 'html', 'cssls' }
+local servers = { 'pyright',
+  'rust_analyzer',
+  -- 'sumneko_lua', --> deprecated
+  'lua_ls',
+  'clangd',
+  'bashls',
+  'html',
+  'cssls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = require('config.lsp.keymaps').on_attach,

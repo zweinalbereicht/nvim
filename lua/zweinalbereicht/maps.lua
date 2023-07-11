@@ -22,7 +22,6 @@ keymap('n', '<S-l>', ':bnext <CR>', opts)
 keymap('n', '<S-h>', ':bprev <CR>', opts)
 keymap('n', '<leader>c', ':w<CR>:bdelete<CR>', opts)
 
-
 -- QOL keympas
 keymap('i', 'kj', '<ESC>', opts)                                        -- going fom insert to normal quicler
 keymap('i', 'jk', '<ESC>', opts)
