@@ -15,3 +15,6 @@ require('zweinalbereicht.maps')
 require('zweinalbereicht.colors')
 require('zweinalbereicht.packer')
 require('zweinalbereicht.lsp')
+if 2<3 then
+  print('lala')
+end
