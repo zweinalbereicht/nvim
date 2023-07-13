@@ -58,4 +58,14 @@ return require('packer').startup(function(use)
     run = require("Comment").setup()
   }
 
+  -- vim-tmux navigator
+  use {
+    'alexghergh/nvim-tmux-navigation'
+  }
+
+  -- startscreen
+  use {
+    "goolord/alpha-nvim",
+  }
+
 end)
