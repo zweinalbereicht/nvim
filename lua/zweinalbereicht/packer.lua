@@ -41,9 +41,13 @@ return require('packer').startup(function(use)
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
     {'hrsh7th/cmp-cmdline'},
+    {'hrsh7th/cmp-buffer'},     -- Required
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
-    {'L3MON4D3/LuaSnip'},     -- Required
-    {'rafamadriz/friendly-snippets'}
+    {'L3MON4D3/LuaSnip', -- Attention, il faut bien mettre tout le monde ensemble!
+    requires = { 
+      'rafamadriz/friendly-snippets',     -- Required
+      'saadparwaiz1/cmp_luasnip' },
+    }
   }
 }
 
