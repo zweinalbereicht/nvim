@@ -29,4 +29,12 @@ telescope.setup({
     preview = false,
     prompt_prefix = "Be my guest : "
   },
+  pickers = {
+      -- find_files = {
+      --     theme="dropdown",
+      -- },
+      -- live_grep = {
+      --     theme = "cursor",
+      -- }
+  },
 })
